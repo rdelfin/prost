@@ -1081,7 +1081,7 @@ pub fn compile_protos(protos: &[impl AsRef<Path>], includes: &[impl AsRef<Path>]
 pub fn protoc() -> PathBuf {
     match env::var_os("PROTOC") {
         Some(protoc) => PathBuf::from(protoc),
-        None => PathBuf::from(env!("PROTOC")),
+        None => PathBuf::from(std::env::var("PROTOC").expect("protoc not specified")),
     }
 }
 
@@ -1089,7 +1089,7 @@ pub fn protoc() -> PathBuf {
 pub fn protoc_include() -> PathBuf {
     match env::var_os("PROTOC_INCLUDE") {
         Some(include) => PathBuf::from(include),
-        None => PathBuf::from(env!("PROTOC_INCLUDE")),
+        None => PathBuf::from(option_env!("PROTOC_INCLUDE").unwrap_or(".")),
     }
 }
 
