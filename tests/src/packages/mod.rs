@@ -77,4 +77,9 @@ fn test() {
         "packages.gizmo.Gizmo.Inner",
         gizmo::gizmo::Inner::message_path()
     );
+
+    assert_eq!(
+        "packages.gizmo.GIZMO_ALL_CAPS",
+        gizmo::GizmoAllCaps::message_path()
+    );
 }
