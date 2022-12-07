@@ -22,6 +22,37 @@ fn try_message(input: TokenStream) -> Result<TokenStream, Error> {
     let input: DeriveInput = syn::parse(input)?;
 
     let ident = input.ident;
+    let attrs = input.attrs;
+
+    let mut package = None;
+    let mut source_name = None;
+    for attr in attrs {
+        if attr.path.is_ident("prost") {
+            if let Ok(arg) = attr.parse_args::<syn::MetaNameValue>() {
+                if arg.path.is_ident("package") {
+                    if let syn::Lit::Str(lit) = arg.lit {
+                        let value = lit.value();
+                        if !value.is_empty() {
+                            package = Some(value);
+                        }
+                    }
+                } else if arg.path.is_ident("source_name") {
+                    if let syn::Lit::Str(lit) = arg.lit {
+                        let value = lit.value();
+                        if !value.is_empty() {
+                            source_name = Some(value);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    let message_path = match (package, source_name) {
+        (Some(package), Some(source_name)) => package + "." + &source_name,
+        (Some(package), None) => package + "." + &ident.to_string(),
+        _ => ident.to_string(),
+    };
 
     let variant_data = match input.data {
         Data::Struct(variant_data) => variant_data,
@@ -215,6 +246,10 @@ fn try_message(input: TokenStream) -> Result<TokenStream, Error> {
 
             fn clear(&mut self) {
                 #(#clear;)*
+            }
+
+            fn message_path() -> &'static str {
+                #message_path
             }
         }
 
