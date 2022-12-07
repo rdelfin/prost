@@ -2,6 +2,8 @@
 /// files it parses.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="FileDescriptorSet")]
 pub struct FileDescriptorSet {
     #[prost(message, repeated, tag = "1")]
     pub file: ::prost::alloc::vec::Vec<FileDescriptorProto>,
@@ -9,6 +11,8 @@ pub struct FileDescriptorSet {
 /// Describes a complete .proto file.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="FileDescriptorProto")]
 pub struct FileDescriptorProto {
     /// file name, relative to root of source tree
     #[prost(string, optional, tag = "1")]
@@ -51,6 +55,8 @@ pub struct FileDescriptorProto {
 /// Describes a message type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="DescriptorProto")]
 pub struct DescriptorProto {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
@@ -79,6 +85,8 @@ pub struct DescriptorProto {
 pub mod descriptor_proto {
     #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Message)]
+    #[prost(package="google.protobuf.DescriptorProto")]
+    #[prost(source_name="ExtensionRange")]
     pub struct ExtensionRange {
         /// Inclusive.
         #[prost(int32, optional, tag = "1")]
@@ -94,6 +102,8 @@ pub mod descriptor_proto {
     /// not overlap.
     #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Message)]
+    #[prost(package="google.protobuf.DescriptorProto")]
+    #[prost(source_name="ReservedRange")]
     pub struct ReservedRange {
         /// Inclusive.
         #[prost(int32, optional, tag = "1")]
@@ -105,6 +115,8 @@ pub mod descriptor_proto {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="ExtensionRangeOptions")]
 pub struct ExtensionRangeOptions {
     /// The parser stores options it doesn't recognize here. See above.
     #[prost(message, repeated, tag = "999")]
@@ -113,6 +125,8 @@ pub struct ExtensionRangeOptions {
 /// Describes a field within a message.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="FieldDescriptorProto")]
 pub struct FieldDescriptorProto {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
@@ -322,6 +336,8 @@ pub mod field_descriptor_proto {
 /// Describes a oneof.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="OneofDescriptorProto")]
 pub struct OneofDescriptorProto {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
@@ -331,6 +347,8 @@ pub struct OneofDescriptorProto {
 /// Describes an enum type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="EnumDescriptorProto")]
 pub struct EnumDescriptorProto {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
@@ -360,6 +378,8 @@ pub mod enum_descriptor_proto {
     /// domain.
     #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Message)]
+    #[prost(package="google.protobuf.EnumDescriptorProto")]
+    #[prost(source_name="EnumReservedRange")]
     pub struct EnumReservedRange {
         /// Inclusive.
         #[prost(int32, optional, tag = "1")]
@@ -372,6 +392,8 @@ pub mod enum_descriptor_proto {
 /// Describes a value within an enum.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="EnumValueDescriptorProto")]
 pub struct EnumValueDescriptorProto {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
@@ -383,6 +405,8 @@ pub struct EnumValueDescriptorProto {
 /// Describes a service.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="ServiceDescriptorProto")]
 pub struct ServiceDescriptorProto {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
@@ -394,6 +418,8 @@ pub struct ServiceDescriptorProto {
 /// Describes a method of a service.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="MethodDescriptorProto")]
 pub struct MethodDescriptorProto {
     #[prost(string, optional, tag = "1")]
     pub name: ::core::option::Option<::prost::alloc::string::String>,
@@ -443,6 +469,8 @@ pub struct MethodDescriptorProto {
 ///   to automatically assign option numbers.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="FileOptions")]
 pub struct FileOptions {
     /// Sets the Java package where classes generated from this .proto will be
     /// placed.  By default, the proto package is used, but this is often
@@ -607,6 +635,8 @@ pub mod file_options {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="MessageOptions")]
 pub struct MessageOptions {
     /// Set true to use the old proto1 MessageSet wire format for extensions.
     /// This is provided for backwards-compatibility with the MessageSet wire
@@ -668,6 +698,8 @@ pub struct MessageOptions {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="FieldOptions")]
 pub struct FieldOptions {
     /// The ctype option instructs the C++ code generator to use a different
     /// representation of the field than it normally would.  See the specific
@@ -834,6 +866,8 @@ pub mod field_options {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="OneofOptions")]
 pub struct OneofOptions {
     /// The parser stores options it doesn't recognize here. See above.
     #[prost(message, repeated, tag = "999")]
@@ -841,6 +875,8 @@ pub struct OneofOptions {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="EnumOptions")]
 pub struct EnumOptions {
     /// Set this option to true to allow mapping different tag names to the same
     /// value.
@@ -858,6 +894,8 @@ pub struct EnumOptions {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="EnumValueOptions")]
 pub struct EnumValueOptions {
     /// Is this enum value deprecated?
     /// Depending on the target platform, this can emit Deprecated annotations
@@ -871,6 +909,8 @@ pub struct EnumValueOptions {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="ServiceOptions")]
 pub struct ServiceOptions {
     /// Is this service deprecated?
     /// Depending on the target platform, this can emit Deprecated annotations
@@ -884,6 +924,8 @@ pub struct ServiceOptions {
 }
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="MethodOptions")]
 pub struct MethodOptions {
     /// Is this method deprecated?
     /// Depending on the target platform, this can emit Deprecated annotations
@@ -957,6 +999,8 @@ pub mod method_options {
 /// in them.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="UninterpretedOption")]
 pub struct UninterpretedOption {
     #[prost(message, repeated, tag = "2")]
     pub name: ::prost::alloc::vec::Vec<uninterpreted_option::NamePart>,
@@ -984,6 +1028,8 @@ pub mod uninterpreted_option {
     /// "foo.(bar.baz).qux".
     #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Message)]
+    #[prost(package="google.protobuf.UninterpretedOption")]
+    #[prost(source_name="NamePart")]
     pub struct NamePart {
         #[prost(string, required, tag = "1")]
         pub name_part: ::prost::alloc::string::String,
@@ -995,6 +1041,8 @@ pub mod uninterpreted_option {
 /// FileDescriptorProto was generated.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="SourceCodeInfo")]
 pub struct SourceCodeInfo {
     /// A Location identifies a piece of source code in a .proto file which
     /// corresponds to a particular definition.  This information is intended
@@ -1047,6 +1095,8 @@ pub struct SourceCodeInfo {
 pub mod source_code_info {
     #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Message)]
+    #[prost(package="google.protobuf.SourceCodeInfo")]
+    #[prost(source_name="Location")]
     pub struct Location {
         /// Identifies which part of the FileDescriptorProto was defined at this
         /// location.
@@ -1142,6 +1192,8 @@ pub mod source_code_info {
 /// source file, but may contain references to different source .proto files.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="GeneratedCodeInfo")]
 pub struct GeneratedCodeInfo {
     /// An Annotation connects some span of text in generated code to an element
     /// of its generating .proto file.
@@ -1152,6 +1204,8 @@ pub struct GeneratedCodeInfo {
 pub mod generated_code_info {
     #[allow(clippy::derive_partial_eq_without_eq)]
     #[derive(Clone, PartialEq, ::prost::Message)]
+    #[prost(package="google.protobuf.GeneratedCodeInfo")]
+    #[prost(source_name="Annotation")]
     pub struct Annotation {
         /// Identifies the element in the original source .proto file. This field
         /// is formatted the same as SourceCodeInfo.Location.path.
@@ -1266,6 +1320,8 @@ pub mod generated_code_info {
 /// ```
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Any")]
 pub struct Any {
     /// A URL/resource name that uniquely identifies the type of the serialized
     /// protocol buffer message. This string must contain at least
@@ -1304,6 +1360,8 @@ pub struct Any {
 /// protobuf element, like the file in which it is defined.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="SourceContext")]
 pub struct SourceContext {
     /// The path-qualified name of the .proto file that contained the associated
     /// protobuf element.  For example: `"google/protobuf/source_context.proto"`.
@@ -1313,6 +1371,8 @@ pub struct SourceContext {
 /// A protocol buffer message type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Type")]
 pub struct Type {
     /// The fully qualified message name.
     #[prost(string, tag = "1")]
@@ -1336,6 +1396,8 @@ pub struct Type {
 /// A single field of a message type.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Field")]
 pub struct Field {
     /// The field type.
     #[prost(enumeration = "field::Kind", tag = "1")]
@@ -1530,6 +1592,8 @@ pub mod field {
 /// Enum type definition.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Enum")]
 pub struct Enum {
     /// Enum type name.
     #[prost(string, tag = "1")]
@@ -1550,6 +1614,8 @@ pub struct Enum {
 /// Enum value definition.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="EnumValue")]
 pub struct EnumValue {
     /// Enum value name.
     #[prost(string, tag = "1")]
@@ -1565,6 +1631,8 @@ pub struct EnumValue {
 /// enumeration, etc.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Option")]
 pub struct Option {
     /// The option's name. For protobuf built-in options (options defined in
     /// descriptor.proto), this is the short name. For example, `"map_entry"`.
@@ -1619,6 +1687,8 @@ impl Syntax {
 /// detailed terminology.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Api")]
 pub struct Api {
     /// The fully qualified name of this interface, including package name
     /// followed by the interface's simple name.
@@ -1665,6 +1735,8 @@ pub struct Api {
 /// Method represents a method of an API interface.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Method")]
 pub struct Method {
     /// The simple name of this method.
     #[prost(string, tag = "1")]
@@ -1778,6 +1850,8 @@ pub struct Method {
 /// ```
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Mixin")]
 pub struct Mixin {
     /// The fully qualified name of the interface which is included.
     #[prost(string, tag = "1")]
@@ -1853,6 +1927,8 @@ pub struct Mixin {
 /// microsecond should be expressed in JSON format as "3.000001s".
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Duration")]
 pub struct Duration {
     /// Signed seconds of the span of time. Must be from -315,576,000,000
     /// to +315,576,000,000 inclusive. Note: these bounds are computed from:
@@ -2092,6 +2168,8 @@ pub struct Duration {
 /// `INVALID_ARGUMENT` error if any path is unmappable.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="FieldMask")]
 pub struct FieldMask {
     /// The set of field mask paths.
     #[prost(string, repeated, tag = "1")]
@@ -2107,6 +2185,8 @@ pub struct FieldMask {
 /// The JSON representation for `Struct` is JSON object.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Struct")]
 pub struct Struct {
     /// Unordered map of dynamically typed values.
     #[prost(btree_map = "string, message", tag = "1")]
@@ -2123,6 +2203,8 @@ pub struct Struct {
 /// The JSON representation for `Value` is JSON value.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Value")]
 pub struct Value {
     /// The kind of value.
     #[prost(oneof = "value::Kind", tags = "1, 2, 3, 4, 5, 6")]
@@ -2159,6 +2241,8 @@ pub mod value {
 /// The JSON representation for `ListValue` is JSON array.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="ListValue")]
 pub struct ListValue {
     /// Repeated field of dynamically typed values.
     #[prost(message, repeated, tag = "1")]
@@ -2293,6 +2377,8 @@ impl NullValue {
 /// the Joda Time's \[`ISODateTimeFormat.dateTime()`\](<http://www.joda.org/joda-time/apidocs/org/joda/time/format/ISODateTimeFormat.html#dateTime%2D%2D>) to obtain a formatter capable of generating timestamps in this format.
 #[allow(clippy::derive_partial_eq_without_eq)]
 #[derive(Clone, PartialEq, ::prost::Message)]
+#[prost(package="google.protobuf")]
+#[prost(source_name="Timestamp")]
 pub struct Timestamp {
     /// Represents seconds of UTC time since Unix epoch
     /// 1970-01-01T00:00:00Z. Must be from 0001-01-01T00:00:00Z to
