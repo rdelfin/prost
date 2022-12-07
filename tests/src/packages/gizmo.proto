@@ -6,3 +6,6 @@ message Gizmo {
   message Inner {
   }
 }
+
+message GIZMO_ALL_CAPS {
+}
